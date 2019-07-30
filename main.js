@@ -21,6 +21,7 @@ var brickOffsetLeft = 30;
 var score = 0;
 var lives = 3;
 var animationId = '';
+var pausedmsg = document.querySelector(".paused");
 
 var bricks = [];
 for (var c = 0; c < brickColumnCount; c++) {
@@ -32,7 +33,7 @@ for (var c = 0; c < brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
+// document.addEventListener("mousemove", mouseMoveHandler, false);
 
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
@@ -60,6 +61,7 @@ function keyUpHandler(e) {
     if (e.keyCode == 32) {
         //cancelAnimationFrame(animationId);
         isPaused = !isPaused;
+        pausedmsg.classList.toggle("show");
         if(!isPaused) draw();
 
     }

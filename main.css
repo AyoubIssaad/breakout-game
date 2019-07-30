@@ -7,3 +7,12 @@ canvas {
   display: block;
   margin: 0 auto;
 }
+.paused {
+  font-size: 1em;
+  font-weight: 600;
+  color: red;
+  text-align: center;
+}
+.show {
+  display: none;
+}
